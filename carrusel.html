@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel con Transiciones Suaves</title>
+    <style>
+        /* Contenedor del carrusel */
+        #carousel {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Imágenes del carrusel */
+        #carousel img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out; /* Transición suave */
+        }
+
+        /* Imagen activa */
+        #carousel img.active {
+            opacity: 1;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <img src="https://i.imgur.com/SANsHGb.jpg" alt="Imagen 1" class="active"/>
+        <img src="https://i.imgur.com/BPvQmn2.png" alt="Imagen 2" />
+        <img src="https://i.imgur.com/d5K7c3P.jpg" alt="Imagen 3" />
+        <img src="https://i.imgur.com/StXvI4n.jpg" alt="Imagen 4" />
+        <img src="https://i.imgur.com/3HOJHLr.jpg" alt="Imagen 5" />
+        <img src="https://i.imgur.com/Wy50vGn.png" alt="Imagen 6" />
+    </div>
+    <script>
+        // JavaScript para manejar el carrusel
+        const images = document.querySelectorAll("#carousel img");
+        let current = 0;
+
+        setInterval(() => {
+            // Quita la clase 'active' de la imagen actual
+            images[current].classList.remove("active");
+
+            // Mueve al siguiente índice, con bucle al inicio
+            current = (current + 1) % images.length;
+
+            // Añade la clase 'active' a la nueva imagen actual
+            images[current].classList.add("active");
+        }, 3000); // Cambia cada 3 segundos
+    </script>
+</body>
+</html>
+
