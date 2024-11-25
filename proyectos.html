@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable</title>
+    <style>
+        /* Estilos para el contenedor */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00549c; /* Fondo azul */
+        }
+
+        /* Estilos para el menú */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            background-color: #00549c;
+            padding: 10px;
+            border: none;
+            text-align: center;
+        }
+
+        /* Estilo del botón */
+        .dropbtn {
+            background-color: #00549c;
+            color: #00549c;  
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo del ícono */
+        .dropbtn svg {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Menú desplegable */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ebedf0; 
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Estilo de los enlaces en el menú */
+        .dropdown-content a {
+            color: #00549c;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Cambio de color al pasar el ratón */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Mostrar el menú cuando se hace hover sobre el botón */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Botón con ícono que despliega el menú -->
+<div class="dropdown">
+    <button class="dropbtn">
+        <span>Proyectos</span>
+        <!-- Ícono similar al que pediste -->
+        <svg style="margin-right:10px;vertical-align:middle;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 9V7C21 6.44772 20.5523 6 20 6H10L9 4H4L3.21115 5.57771C3.07229 5.85542 3 6.16165 3 6.47214V9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M3.91321 20H20.0868C20.604 20 21.0359 19.6056 21.0827 19.0905L21.9009 10.0905C21.9541 9.50492 21.493 9 20.905 9H3.09503C2.507 9 2.0459 9.50492 2.09914 10.0905L2.91732 19.0905C2.96415 19.6056 3.39601 20 3.91321 20Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </button>
+    <!-- Menú desplegable -->
+    <div class="dropdown-content">
+        <a href="#">Proyecto 1</a>
+        <a href="#">Proyecto 2</a>
+        <a href="#">Proyecto 3</a>
+    </div>
+</div>
+
+</body>
+</html>
