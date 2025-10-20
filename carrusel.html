@@ -5,33 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Carrusel</title>
 <style>
-  html, body { margin:0; padding:0; }
-  /* Ajusta el alto del carrusel: 60% del alto de la ventana, con tope */
+  html, body { height:100%; margin:0; padding:0; }  /* clave para que 100% funcione */
+
   #carousel {
     width: 100%;
-    height: 60vh;          /* ← cámbialo a 70vh/80vh o px si prefieres */
-    max-height: 900px;     /* opcional */
+    height: 100%;        /* ocupa todo el alto del widget Incrustar */
     position: relative;
     overflow: hidden;
     background:#000;
   }
   #carousel img {
     position: absolute;
-    inset: 0;              /* top/right/bottom/left: 0 */
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;     /* rellena sin deformar */
+    object-fit: cover;
     opacity: 0;
     transition: opacity 1.5s ease;
   }
   #carousel img.active { opacity: 1; z-index: 1; }
-  /* sin “fantasma” */
   #carousel img.previous { opacity: 0; z-index: 0; }
 </style>
 </head>
 <body>
   <div id="carousel">
-    <img src="https://i.imgur.com/SANsHGb.jpg" alt="Imagen 1" class="active"/>
+    <img src="https://i.imgur.com/SANsHGb.jpg" class="active" alt="Imagen 1"/>
     <img src="https://i.imgur.com/BPvQmn2.png" alt="Imagen 2"/>
     <img src="https://i.imgur.com/d5K7c3P.jpg" alt="Imagen 3"/>
     <img src="https://i.imgur.com/StXvI4n.jpg" alt="Imagen 4"/>
@@ -42,20 +40,15 @@
   <script>
     const images = document.querySelectorAll('#carousel img');
     let current = 0;
-
     setInterval(() => {
       const prev = images[current];
       prev.classList.remove('active');
       prev.classList.add('previous');
-
       current = (current + 1) % images.length;
-
       const next = images[current];
       next.classList.add('active');
-
-      /* limpia la clase previous tras la transición */
       setTimeout(() => prev.classList.remove('previous'), 1600);
-    }, 5000); // cada 5 s
+    }, 5000);
   </script>
 </body>
 </html>
