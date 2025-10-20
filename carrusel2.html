@@ -8,14 +8,15 @@
   html, body { margin:0; padding:0; }
   /* Ajusta el alto del carrusel: 60% del alto de la ventana, con tope */
 #carousel {
-    width: 100%;
-    height: 100%;  /* aprovecha todo el espacio que le dé Experience Builder */
-    position: relative;
-      overflow: hidden;
-    display: flex;
+  width: 100%;
+  height: 100vh; /* ocupa todo el alto visible del navegador */
+  position: relative;
+  overflow: hidden;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
   #carousel img {
     position: absolute;
